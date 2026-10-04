@@ -43,6 +43,21 @@ flowchart TD
 
 ---
 
+## 💻 Infrastructure & Software Technology Stack
+
+| Layer | Technology & Tools | Production Role |
+|---|---|---|
+| **Virtual Desktop & Display Server** | X11, Xvfb (Virtual Framebuffer), Fluxbox / Openbox | Provides headless 1920x1080 display output with deterministic window management |
+| **VNC & Remote Framebuffer Streaming** | x11vnc, TigerVNC, websockify | High-frequency screen frame capture and low-latency canvas streaming |
+| **Foundation Model & Reasoning Engine** | Anthropic Claude 3.7 Sonnet | Hybrid reasoning budget with dynamic thinking tokens for complex GUI planning |
+| **Computer Use API & Tool Dispatcher** | Anthropic Beta Computer Tool, Anthropic SDK | Official `computer_20241022` / `computer_20250124` tool call protocol handler |
+| **OS Input Automation Libraries** | PyAutoGUI, python-xlib, xdotool | Native sub-pixel mouse clicking, dragging, scrolling, and keyboard keystrokes |
+| **Coordinate Transform & Vision Processing**| Pillow (PIL), NumPy, OpenCV | DPI scaling, multi-monitor coordinate translation, and screenshot resizing |
+| **Container & Sandboxing Security** | Kubernetes, Docker, Linux Seccomp-BPF | Strict isolation, non-root execution, process sandboxing, and Cilium egress filtering |
+| **Human-in-the-Loop & Action Guardrails** | Custom Python Policy Engine | Command pattern matching, dangerous action interception, and human approval gates |
+
+---
+
 ## 🎯 Where to Use (Real-World Enterprise Production Scenarios)
 
 1. **Legacy ERP & Mainframe Desktop Automation**:
