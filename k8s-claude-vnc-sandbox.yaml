@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: claude-vnc-sandbox
+  namespace: computer-use-sandboxes
+  labels:
+    app.kubernetes.io/name: claude-vnc-sandbox
+    app.kubernetes.io/part-of: computer-use-mesh
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: claude-vnc-sandbox
+  template:
+    metadata:
+      labels:
+        app: claude-vnc-sandbox
+    spec:
+      containers:
+      - name: vnc-sandbox
+        image: ghcr.io/pradeeptalari14/claude-vnc-sandbox:v1.0.0
+        ports:
+        - containerPort: 5900
+          name: vnc
+        - containerPort: 8080
+          name: operator-api
+        env:
+        - name: DISPLAY
+          value: ":1"
+        - name: RESOLUTION
+          value: "1920x1080"
+        resources:
+          requests:
+            cpu: "1"
+            memory: "2Gi"
+          limits:
+            cpu: "4"
+            memory: "8Gi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: claude-vnc-sandbox
+  namespace: computer-use-sandboxes
+spec:
+  type: ClusterIP
+  selector:
+    app: claude-vnc-sandbox
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: operator-api
+  - port: 5900
+    targetPort: 5900
+    name: vnc
