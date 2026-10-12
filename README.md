@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # Claude 3.7 Computer Use 2.0 & OS Operator (`tp-claude-37-computer-use`)
 
 [![CI](https://github.com/Pradeeptalari14/tp-claude-37-computer-use/actions/workflows/operator-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-claude-37-computer-use/actions)
@@ -139,3 +142,6 @@ tp-claude-37-computer-use/
 - **Destructive Command Interception**: Patterns such as `rm -rf /`, `mkfs`, or privilege escalation scripts trigger immediate execution pauses and human operator alerts.
 - **Coordinate Boundary Clamping**: Coordinates targeted beyond the configured display resolution boundaries are rejected with explicit error diagnostics.
 - **Visual Audit Ledger**: Every executed action captures an associated before/after PNG frame stored in cryptographic audit logs for compliance traceability.
+
+---
+*Synchronized with [Claude 3.7 Computer Use Operator Studio Studio](https://pradeeptalari.me/tools/claude-37-computer-use/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
